@@ -7,18 +7,18 @@
     <link rel="stylesheet" href="./style.css" />
     <title>CarsFan</title>
   </head>
-  <!-- larg header + backgrounf color + nav + search-->
+  <!-- larg header + background color + nav + search-->
 
   <body>
     <div class="banner">
       <div class="title">
-        <h1>CARS FAN</h1>
+        <h1>Cars</h1>
       </div>
 
       <ul class="nav">
         <li><a href="#">Home</a></li>
         <li><a href="#">Favorite Cars</a></li>
-        <li><a href="#">Description</a></li>
+        <li><a href="#">About Us</a></li>
       </ul>
 
       <div class="search">
@@ -28,20 +28,23 @@
           placeholder="Search for your best car"
         />
       </div>
+      <div class="hidePage">
+        <div class="midPage">
+          <img id="bannerImg" src="./project1cars/newbanner.jpg" width="100%" />
+        </div>
 
-      <div class="midPage">
-        <img id="bannerImg" src="./project1cars/banner.jpg" width="100%" />
+        <div class="categories">
+          <ul id="cards">
+            <!-- <li class="card">
+      <img id="cardImg-${i}" src="${item.imgCar}" width="100%" />
+      <p id="cardDesc-${i}">${item.category}</p>
+      <button id="cardBtn-${i}">More Info</button>
+    </li> -->
+          </ul>
+        </div>
       </div>
-    </div>
 
-    <div class="categories">
-      <ul id="cards">
-        <!-- <li class="card">
-          <img id="cardImg -${i}" src="${item.imgCar}" width="100%" />
-          <p>${item.category}</p>
-          <button>More Info</button>
-        </li> -->
-      </ul>
+
     </div>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
     <script src="./main.js"></script>
