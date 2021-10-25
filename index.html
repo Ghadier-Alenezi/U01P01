@@ -12,14 +12,24 @@
   <body>
     <div class="banner">
       <div class="title">
-        <h1>Cars</h1>
+        <h1 a href="index.html">Cars</h1>
       </div>
-
+      <script type="text/javascript">
+        function renderAbouUs() {
+          $(".hidePage").hide();
+          $(".aboutUs").append(`<div>
+  <h1>WELCOME</h1>
+  <p>I'm pleased to have you here. My name is Ghadier a lucky girl to have this opportunity and work with such a community of programers. I look forward to collaborate with you in our bright future. KEEP UP THE GOOD WORK!</p>
+  </div>`);
+        }
+      </script>
       <ul class="nav">
-        <li><a href="#">Home</a></li>
+        <li><a href="index.html">Home</a></li>
         <li><a href="#">Favorite Cars</a></li>
-        <li><a href="#">About Us</a></li>
+        <li><a href="#" onclick="renderAbouUs()">About Us</a></li>
       </ul>
+
+      <div class="aboutUs"></div>
 
       <div class="search">
         <input
@@ -30,21 +40,14 @@
       </div>
       <div class="hidePage">
         <div class="midPage">
-          <img id="bannerImg" src="./project1cars/newbanner.jpg" width="100%" />
+          <img id="bannerImg" src="./project1cars/newbanner.jpg" />
         </div>
 
         <div class="categories">
-          <ul id="cards">
-            <!-- <li class="card">
-      <img id="cardImg-${i}" src="${item.imgCar}" width="100%" />
-      <p id="cardDesc-${i}">${item.category}</p>
-      <button id="cardBtn-${i}">More Info</button>
-    </li> -->
-          </ul>
+          <div id="cards"></div>
         </div>
       </div>
-
-
+      <div class="descCat"></div>
     </div>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
     <script src="./main.js"></script>
