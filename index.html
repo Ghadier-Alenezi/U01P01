@@ -4,16 +4,13 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="./style.css" />
-    <title>CarsFan</title>
+    <link rel="stylesheet" href="./newStyle.css" />
+    <title>ClassicCars</title>
   </head>
-  <!-- larg header + background color + nav + search-->
   <body>
     <div id="wrapper">
-      <div class="header">
-        <div class="title">
-          <h1>Cars</h1>
-        </div>
+      <header>
+        <a class="logo" href="./index.html">ClassicCars</a>
         <div class="nav">
           <ul>
             <li><a href="index.html">Home</a></li>
@@ -22,18 +19,16 @@
           </ul>
         </div>
 
-        <div class="search">
-          <input
-            class="search"
-            type="text"
-            placeholder="Search for your best car"
-          />
-        </div>
-      </div>
+        <input class="search" type="text" placeholder="Search for a car" />
+      </header>
 
       <div class="dynamicPage">
-        <div class="midPage">
-          <img id="bannerImg" src="./project1cars/newbanner.jpg" />
+        <div class="banner">
+          <img
+            class="bannerImg"
+            src="./project1cars/bannerImg.jpg"
+            alt="bnrImg"
+          />
         </div>
 
         <div class="categories">
@@ -42,12 +37,12 @@
       </div>
       <div class="descPage"></div>
       <div class="aboutUs"></div>
-
-        <div class="footer">
-            <footer>
-              <h2>Created By Ghadier Alenezi 2021 Tuwaiq Bootcamp - Qassim</h2>
-            </footer>
-        </div>
+      <div class="favoriteP"></div>
+      <div class="footer">
+        <footer>
+          <p>Created By Ghadier Alenezi 2021 Tuwaiq Bootcamp - Qassim</p>
+        </footer>
+      </div>
     </div>
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
