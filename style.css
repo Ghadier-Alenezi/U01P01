@@ -1,95 +1,149 @@
 * {
-  margin: 0;
   padding: 0;
+  margin: 0;
   box-sizing: border-box;
 }
-.banner {
-  width: 100%;
-  height: 10%;
-  padding: 10px;
-  margin: 10px;
+/* wrapper holding all the page */
+#wrapper {
+  min-height: 100%;
 }
-
+/* header contin title, search, nav  */
+.header{
+  display: flex;
+  justify-content: center;
+}
+/* name of the website */
+.title {
+  display: inline-block;
+  width: 20%;
+  margin: 25px;
+  font-size: 40px;
+}
+/* nav bar */
 .nav {
   display: flex;
   justify-content: space-evenly;
   margin: 10px;
 }
-
+/* navbar style */
+li {
+  list-style: none;
+  display: flex;
+}
+/* search bar */
 .search {
-  display: grid;
-  width: 40%;
+  width: 60%;
   margin: 10px;
   padding: 5px;
   border-radius: 10px;
 }
-
-li {
-  list-style: none;
+/* conatin the middle img */
+.midPage {
   display: flex;
-  flex-direction: row;
-}
-
-#cards {
-  height: 50%;
+  justify-content: center;
   width: 100%;
+  height: 700px;
+}
+/* group of cards */
+#cards {
+  height: 40%;
+  width: 80%;
   display: flex;
   flex-wrap: wrap;
-  justify-content: space-around;
+  /* justify-content: space-around; */
 }
-
+/* the one card alone */
 .card {
-  display: grid;
-  width: 32%;
+  display: flex;
+  flex-wrap: wrap;
+  border-radius: 10px;
+  /* display: grid; */
+  justify-content: space-around;
+  width: 30%;
+  padding: 20px;
+  margin: auto;
 }
-
+.card:hover {
+  background-color: rgba(172, 172, 172, 0.215);
+}
+.crdImg {
+  display: flex;
+  width: 400px;
+  height: 300px;
+}
+/*  all linkes style */
 a {
   text-decoration: none;
   color: black;
 }
+a:hover {
+  background-color: rgba(172, 172, 172, 0.215);
+  transition: 0.3s ease-in-out;
+}
+/* fontstyle of the text */
 h1,
 p,
 li,
-button,
-footer {
+button {
   font-family: "Gill Sans", sans-serif;
+  font-size: 180%;
 }
-
-footer {
-  margin: 20px;
-  text-align: center;
-}
-
+/* all buttons style */
 button {
   margin: 10px;
   padding: 5px;
   border-radius: 8px;
+  font-family: "Gill Sans", sans-serif;
+  font-size: 120%;
 }
-
+/* img after card opened */
+.imgM {
+  display: flex;
+  justify-content: left;
+  height: 10%;
+  margin-bottom: 20px;
+}
+/* border of the all imgs */
 img {
   border-radius: 8px;
 }
-
-/* ef */
-.descCat {
+/* description page */
+.descPage {
   display: flex;
   flex-wrap: wrap;
   margin: 20px;
+  font-size: 200%;
 }
-
+/* gallary imgs inside the card */
 #extraImges {
   display: flex;
   flex-wrap: wrap;
-  justify-content: space-around;
+  justify-content: space-evenly;
+  width: 100%;
 }
-
+/* div contain that gallary */
 #extraImges div {
-  width: 30%;
+  width: 8%;
+  height: 150px;
   height: 450px;
 }
-
+/* div contain the large img */
 #extraImges div img {
   width: 100%;
   height: 100%;
 }
 /* ef */
+/* footer style */
+footer {
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  color: rgb(0, 0, 0);
+  text-align: center;
+  height: 20px;
+  padding: 20px;
+  font-family: "Gill Sans", sans-serif;
+  text-align: center;
+  font-size: 60%;
+}

@@ -43,7 +43,6 @@ let mainArray = [
       "./project1cars/electric-cars/electric3.jpg",
       "./project1cars/electric-cars/electric2.jpg",
       "./project1cars/electric-cars/electric4.jpg",
-
     ],
   },
 ];
@@ -52,20 +51,24 @@ let mainArray = [
 const render = () => {
   mainArray.forEach((item, i) => {
     $("#cards").append(`<div class="card">
-    <img id= "cardImg-${i}" src="${item.imgCar}" width="100%" />
-    <p id= "cardCtg-${i}">${item.category}</p>
-    <button onclick='renderOneItem(${i})' id= "cardBtn-${i}">More Info</button></div>`);
+    <div class ="crdImg"><img id= "cardImg-${i}" src="${item.imgCar}" width="100%" />
+    </div>
+    <div><p id= "cardCtg-${i}">${item.category}</p>
+    </div>
+    <div><button onclick='renderOneItem(${i})' id= "cardBtn-${i}">see more</button></div>
+    </div>`);
   });
 };
 render();
 
 // render item function
 function renderOneItem(i) {
-  $(".hidePage").hide();
+  $(".dynamicPage").hide();
   const myItem = mainArray[i];
-  $(".descCat").append(`<div>
+  $(".descPage").append(`<div>
   <p class="cardDesc">${myItem.describe}</p>
-   <img class="imgM-${i}" src="${myItem.imgM}" />
+  <div class="imgM"><img class="imgM-${i}" src="${myItem.imgM}" />
+  </div>
      <div id='extraImges'></div>
      </div>`);
   myItem.extraImg.forEach((item, i) => {
@@ -74,18 +77,12 @@ function renderOneItem(i) {
   });
 }
 
-// // about us page
-// function renderAbouUs(){
-//   $(".hidePage").hide();
-//   $(".aboutUs").append(`<div>
-//   <h1>WELCOME</h1>
-//   <p>I'm pleased to have you here. My name is Ghadier a lucky girl to have this opportunity to work with such a community of programers. I look forward to collaborate with you in our bright future. KEEP UP THE GOOD WORK!</p>
-//   </div>`)
-// };
-// //search more about how to local storge JSON
-// // logo + fav + search + redesig the whole page
-
-
-
-
-//save fav
+// about us function
+function renderAbouUs() {
+  $(".dynamicPage").hide();
+  $(".aboutUs").append(`<div>
+<h1>WELCOME</h1>
+<p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Laboriosam excepturi earum sit dolorum harum, possimus exercitationem odit dicta soluta in. Non molestias dolorem, libero consequuntur repellat iusto fugit vel dolore!
+</p>
+</div>`);
+};
