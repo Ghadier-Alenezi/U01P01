@@ -13,9 +13,9 @@ let mainArray = [
     most cars from its era.</p>`,
     imgM: "./project1cars/Jaguar E-Type/1.png",
     extraImg: [
-      "./project1cars/Jaguar E-Type/2.png" ,
-      "./project1cars/Jaguar E-Type/3.png" ,
-      "./project1cars/Jaguar E-Type/4.png" ,
+      "./project1cars/Jaguar E-Type/2.png",
+      "./project1cars/Jaguar E-Type/3.png",
+      "./project1cars/Jaguar E-Type/4.png",
     ],
   },
   {
@@ -109,9 +109,9 @@ let mainArray = [
 const render = () => {
   mainArray.forEach((item, i) => {
     $("#cards").append(`<div class="card">
-    <div class ="crdImg"><img id= "cardImg-${i}" src="${item.imgCar}"/>
+    <div class ="imgContainer"><img id= "cardImg-${i}" width= "300px" src="${item.imgCar}"/>
     </div>
-    <div><p id= "cardCtg-${i}">${item.name}</p>
+    <div><h3 id= "cardName-${i}">${item.name}</h3>
     </div>
     <div><button onclick='renderOneItem(${i})' id= "cardBtn-${i}">see more</button></div>
     </div>`);
@@ -125,26 +125,26 @@ function renderOneItem(i) {
   const myItem = mainArray[i];
   $(".descPage").append(`<div>
   <p class="cardDesc">${myItem.describe}</p>
-  <div class="imgM"><img class="imgM-${i}" src="${myItem.imgM}" />
+  <div class="imgM"><img class="imgM-${i}" src="${myItem.imgM}" width ="300px" hight="300px" />
   </div>
      <div id='extraImges'></div>
      </div>`);
   myItem.extraImg.forEach((item, i) => {
     $("#extraImges").append(`<div>
-       <img src='${item}' /><div>`);
+       <img src='${item}' width ="300px" hight="300px"/><div>`);
   });
 }
 
 // about us function
 function renderAbouUs() {
   $(".dynamicPage").hide();
+  $(".descPage").hide();
   $(".aboutUs").append(`<div>
 <h1>WELCOME</h1>
 <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Laboriosam excepturi earum sit dolorum harum, possimus exercitationem odit dicta soluta in. Non molestias dolorem, libero consequuntur repellat iusto fugit vel dolore!
 </p>
 </div>`);
-};
-
+}
 
 //fav function
 
