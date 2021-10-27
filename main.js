@@ -1,5 +1,5 @@
 // array holding all cars info
-let mainArray = [
+let mainArray = JSON.parse(localStorage.getItem("mainArray")) || [
   {
     name: "Jaguar E-Type",
     imgCar: "./project1cars/Jaguar E-Type/1.png",
@@ -17,6 +17,7 @@ let mainArray = [
       "./project1cars/Jaguar E-Type/3.png",
       "./project1cars/Jaguar E-Type/4.png",
     ],
+    isFav: false,
   },
   {
     name: "Aston Martin DB4",
@@ -34,6 +35,7 @@ let mainArray = [
       "./project1cars/Aston Martin DB4/3.png",
       "./project1cars/Aston Martin DB4/4.png",
     ],
+    isFav: false,
   },
 
   {
@@ -51,6 +53,7 @@ let mainArray = [
       "./project1cars/VW Beetle/3.png",
       "./project1cars/VW Beetle/4.png",
     ],
+    isFav: false,
   },
   {
     name: "Mercedes SL 300 Gullwing",
@@ -71,6 +74,7 @@ let mainArray = [
       "./project1cars/Mercedes SL 300 Gullwing/3.png",
       "./project1cars/Mercedes SL 300 Gullwing/4.png",
     ],
+    isFav: false,
   },
   {
     name: "Volvo P1800",
@@ -85,6 +89,7 @@ let mainArray = [
       "./project1cars/Volvo P1800/3.png",
       "./project1cars/Volvo P1800/4.png",
     ],
+    isFav: false,
   },
   {
     name: "Austin-Healey 3000",
@@ -102,18 +107,27 @@ let mainArray = [
       "./project1cars/Austin-Healey 3000/3.png",
       "./project1cars/Austin-Healey 3000/4.png",
     ],
+    isFav: false,
   },
 ];
 
+localStorage.setItem("mainArray", JSON.stringify(mainArray));
+
 // render function
 const render = () => {
+  $("#cards").html("");
   mainArray.forEach((item, i) => {
     $("#cards").append(`<div class="card">
-    <div class ="imgContainer"><img id= "cardImg-${i}" width= "300px" src="${item.imgCar}"/>
+    <div class ="imgContainer"><img id= "cardImg-${i}" width= "300px" src="${
+      item.imgCar
+    }"/>
     </div>
     <div><h3 id= "cardName-${i}">${item.name}</h3>
     </div>
     <div><button onclick='renderOneItem(${i})' id= "cardBtn-${i}">see more</button></div>
+    <div><button onclick='favCar(${i})'id= "favBtn-${i}">${
+      item.isFav ? "remove from favorite" : "add to favorite"
+    }</div>
     </div>`);
   });
 };
@@ -122,30 +136,49 @@ render();
 // render item function
 function renderOneItem(i) {
   $(".dynamicPage").hide();
+  $(".favoriteP").hide();
+  $(".aboutUs").hide();
   const myItem = mainArray[i];
   $(".descPage").append(`<div>
   <p class="cardDesc">${myItem.describe}</p>
-  <div class="imgM"><img class="imgM-${i}" src="${myItem.imgM}" width ="300px" hight="300px" />
-  </div>
      <div id='extraImges'></div>
      </div>`);
   myItem.extraImg.forEach((item, i) => {
     $("#extraImges").append(`<div>
-       <img src='${item}' width ="300px" hight="300px"/><div>`);
+       <img src='${item}'
+       width ="300px" hight="300px"/><div>`);
   });
-}
+};
 
-// about us function
-function renderAbouUs() {
+// about function
+function renderAbout() {
   $(".dynamicPage").hide();
   $(".descPage").hide();
-  $(".aboutUs").append(`<div>
-<h1>WELCOME</h1>
-<p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Laboriosam excepturi earum sit dolorum harum, possimus exercitationem odit dicta soluta in. Non molestias dolorem, libero consequuntur repellat iusto fugit vel dolore!
-</p>
+  $(".favoriteP").hide();
+  $(".aboutUs").append(`<div class ="aboutUsStory">
+<h3>About Classic Cars</h3>
+<p>OWNER OF THE COMPNY</p>
+<p>He was passion for motorcars started young, a 10-year-old reaching for the pedals of some of the finest cars at his father’s garage. At 18 his enthusiasm spilled on to the race track where enjoyed success competing in single seaters and saloon cars.</p>
+
+<p>His apprenticeship was also served at HR Owen and he went on to work in management with one of the UK’s leading prestige motor dealer groups.</p>
+
+<p>In 2011, with a desire to participate in the sports and classic car market again, He returned to his roots to work at the showroom as he had done many years before.</p>
 </div>`);
-}
+};
 
 //fav function
 
+function favCar(i) {
+  mainArray[i].isFav = !mainArray[i].isFav;
+  localStorage.setItem("mainArray", JSON.stringify(mainArray));
+  render();
+  $(".dynamicPage").hide();
+  $(".descPage").hide();
+  $(".aboutUs").hide();
+  $(".favoriteP").append(`<h1></h1>
+  `)
+
+};
+
+$(".favoriteP").append
 //search function

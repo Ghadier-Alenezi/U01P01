@@ -2,141 +2,169 @@
   padding: 0;
   margin: 0;
   box-sizing: border-box;
+  font-family: "Gill Sans", sans-serif;
 }
-/* wrapper holding all the page */
+
 #wrapper {
+  height: 100%;
   min-height: 100%;
+  background-image: url("./project1cars/background.jpg") ;  
+  opacity: 0.95;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-color: #cccccc;
 }
-/* header contin title, search, nav  */
-.header{
+/* this is basic */
+
+header {
   display: flex;
-  justify-content: center;
+  justify-content: flex-end;
+  align-items: center;
+  padding: 20px 0;
+  background-color: rgb(7, 7, 7);
+  box-shadow: black;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.7), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  text-align: center;
 }
-/* name of the website */
-.title {
-  display: inline-block;
-  width: 20%;
-  margin: 25px;
-  font-size: 40px;
+
+.logo {
+  margin-right: auto;
+  padding: 25px;
+  margin-top: 10px;
+  font-size: 30px;
+  font-weight: bold;
+  text-decoration: none;
+  color: aliceblue;
 }
 /* nav bar */
 .nav {
-  display: flex;
-  justify-content: space-evenly;
-  margin: 10px;
+  display: inline-block;
+  justify-content: right;
+  text-align: left;
+  padding: 20px 0 0 0;
 }
-/* navbar style */
-li {
-  list-style: none;
-  display: flex;
+.nav li {
+  display: inline-block;
+  padding: 0px 10px;
+  font-size: 16px;
 }
-/* search bar */
-.search {
-  width: 60%;
-  margin: 10px;
-  padding: 5px;
-  border-radius: 10px;
-}
-/* conatin the middle img */
-.midPage {
-  display: flex;
-  justify-content: center;
-  width: 100%;
-  height: 700px;
-}
-/* group of cards */
-#cards {
-  height: 40%;
-  width: 80%;
-  display: flex;
-  flex-wrap: wrap;
-  /* justify-content: space-around; */
-}
-/* the one card alone */
-.card {
-  display: flex;
-  flex-wrap: wrap;
-  border-radius: 10px;
-  /* display: grid; */
-  justify-content: space-around;
-  width: 30%;
-  padding: 20px;
-  margin: auto;
-}
-.card:hover {
-  background-color: rgba(172, 172, 172, 0.215);
-}
-.crdImg {
-  display: flex;
-  width: 400px;
-  height: 300px;
-}
-/*  all linkes style */
-a {
+.nav li a {
   text-decoration: none;
-  color: black;
+  color: aliceblue;
 }
-a:hover {
-  background-color: rgba(172, 172, 172, 0.215);
-  transition: 0.3s ease-in-out;
+.nav li a:hover {
+  background-color: rgba(172, 172, 172, 0.535);
+  transition: 0.3s ease 0s;
 }
 
-/* all buttons style */
+/* search bar */
+.search {
+  margin-right: 10px;
+  height: 30px;
+  padding: 9px 10px;
+  border: none;
+  background-color: aliceblue;
+  border-radius: 10px;
+  margin-top: 20px;
+  margin-left: 20px;
+  width: 20%;
+}
+
+/* banner img style */
+.banner {
+  width: 100%;
+  display: block;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  text-align: center;
+  margin-bottom: 25px;
+}
+.banner .bannerImg {
+  width: 100%;
+  display: block;
+}
+.qoute{
+  font-size: 120%;
+  text-align: center;
+  margin-bottom: 25px;
+  padding: 25px;
+}
+
+/* group of cards */
+#cards {
+  display: grid;
+  grid-auto-rows: auto;
+  justify-content: center;
+  align-items: center;
+  grid-row-gap: 30px;
+}
+.card {
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  text-align: center;
+  transition: 0.5s ease;
+  cursor: pointer;
+  border-radius: 10px;
+}
+.card:hover{
+  transform: scale(1.1);
+  box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.6);
+}
 button {
+  border: none;
+  border-radius: 8%;
   margin: 10px;
-  padding: 5px;
-  border-radius: 8px;
-  font-family: "Gill Sans", sans-serif;
+  padding: 7px;
+  background-color: #777;
+  color: aliceblue;
   font-size: 120%;
 }
-/* img after card opened */
-.imgM {
-  display: flex;
-  justify-content: left;
-  height: 10%;
-  margin-bottom: 20px;
+button:hover{
+  cursor: pointer;
+  background-color: black;
 }
-/* border of the all imgs */
-img {
-  border-radius: 8px;
-}
-/* description page */
+/* work on this */
 .descPage {
   display: flex;
   flex-wrap: wrap;
   margin: 20px;
-  font-size: 200%;
+  font-size: 100%;
 }
-/* gallary imgs inside the card */
 #extraImges {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-evenly;
-  width: 100%;
+  justify-content: space-between;
+  width: 40%;
 }
-/* div contain that gallary */
 #extraImges div {
   width: 100%;
-  height: 150px;
-  height: 450px;
 }
-/* div contain the large img */
 #extraImges div img {
+  display: flex;
+  flex-wrap: wrap;
   width: 100%;
   height: 100%;
 }
-/* ef */
-/* footer style */
-footer {
-  position: static;
-  left: 0;
-  bottom: 0;
-  width: 100%;
-  color: rgb(0, 0, 0);
-  text-align: center;
-  height: 20px;
+.aboutUsStory{
+  margin: 50px;
   padding: 20px;
-  font-family: "Gill Sans", sans-serif;
+  font-size: 170%;
   text-align: center;
-  font-size: 60%;
+}
+p{
+  margin: 20px;
+}
+.cardDesc{
+  display: inline;
+
+}
+footer {
+  position: sticky;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 50px;
+  background-color: black;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.7), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  color: aliceblue;
+  text-align: center;
+  padding-top: 1px;
+  margin-top: 20%;
 }
