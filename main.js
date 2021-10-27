@@ -157,7 +157,7 @@ function renderAbout() {
   $(".favoriteP").hide();
   $(".aboutUs").append(`<div class ="aboutUsStory">
 <h3>About Classic Cars</h3>
-<p>OWNER OF THE COMPNY</p>
+<p>OWNER OF THE COMPANY</p>
 <p>He was passion for motorcars started young, a 10-year-old reaching for the pedals of some of the finest cars at his father’s garage. At 18 his enthusiasm spilled on to the race track where enjoyed success competing in single seaters and saloon cars.</p>
 
 <p>His apprenticeship was also served at HR Owen and he went on to work in management with one of the UK’s leading prestige motor dealer groups.</p>
