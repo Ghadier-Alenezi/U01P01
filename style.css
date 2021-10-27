@@ -73,6 +73,7 @@ header {
 
 /* banner img style */
 .banner {
+  position: relative;
   width: 100%;
   display: block;
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
@@ -84,10 +85,12 @@ header {
   display: block;
 }
 .qoute{
-  font-size: 120%;
+  color: aliceblue;
+  position: absolute;
+  top: 32%;
+  font-size: 150%;
+  width: 100%;
   text-align: center;
-  margin-bottom: 25px;
-  padding: 25px;
 }
 
 /* group of cards */
@@ -102,6 +105,15 @@ header {
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
   text-align: center;
   transition: 0.5s ease;
+  cursor: pointer;
+  border-radius: 10px;
+}
+.favoriteP{
+  margin: 10%;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  text-align: center;
+  transition: 0.5s ease;
+  justify-content: space-between;
   cursor: pointer;
   border-radius: 10px;
 }
@@ -124,11 +136,12 @@ button:hover{
 }
 /* work on this */
 .descPage {
-  display: flex;
-  flex-wrap: wrap;
-  margin: 20px;
-  font-size: 100%;
+  font-size: 150%;
+  word-wrap: break-word;
+  text-align: right;
+  margin: 2rem 1rem;
 }
+
 #extraImges {
   justify-content: space-between;
   width: 40%;
@@ -151,12 +164,12 @@ button:hover{
 p{
   margin: 20px;
 }
-.cardDesc{
-  display: inline;
-
+.cardDesc p{
+  font-size: 200%;
 }
 footer {
   position: sticky;
+  font-size: 120%;
   bottom: 0;
   left: 0;
   width: 100%;

@@ -148,7 +148,7 @@ function renderOneItem(i) {
        <img src='${item}'
        width ="300px" hight="300px"/><div>`);
   });
-};
+}
 
 // about function
 function renderAbout() {
@@ -156,7 +156,7 @@ function renderAbout() {
   $(".descPage").hide();
   $(".favoriteP").hide();
   $(".aboutUs").append(`<div class ="aboutUsStory">
-<h3>About Classic Cars</h3>
+<h3>Classic Cars</h3>
 <p>OWNER OF THE COMPANY</p>
 <p>He was passion for motorcars started young, a 10-year-old reaching for the pedals of some of the finest cars at his father’s garage. At 18 his enthusiasm spilled on to the race track where enjoyed success competing in single seaters and saloon cars.</p>
 
@@ -164,21 +164,25 @@ function renderAbout() {
 
 <p>In 2011, with a desire to participate in the sports and classic car market again, He returned to his roots to work at the showroom as he had done many years before.</p>
 </div>`);
-};
+}
 
 //fav function
 
 function favCar(i) {
+  $(".dynamicPage").hide();
+  $(".descPage").hide();
   mainArray[i].isFav = !mainArray[i].isFav;
   localStorage.setItem("mainArray", JSON.stringify(mainArray));
   render();
-  $(".dynamicPage").hide();
-  $(".descPage").hide();
-  $(".aboutUs").hide();
-  $(".favoriteP").append(`<h1></h1>
-  `)
+  mainArray.forEach((item, i) => {
+    if (item.isFav === true) {
+      $(".favoriteP").append(`<div class="card">
+      <div class ="imgContainer"><img id= "cardImg-${i}" width= "300px" src="${item.imgCar}"/>
+      </div>
+      <div><h3 id= "cardName-${i}">${item.name}</h3>
+      `)
+    }
+  });
+}
 
-};
-
-$(".favoriteP").append
 //search function
