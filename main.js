@@ -189,8 +189,8 @@ mainArray.forEach((item, i) => {
       item.isFav ? "remove from favorite" : "add to favorite"
     }</div>
       </div>`);
-    render();
   }
+  render();
 });
 
 //search function not completed yet
