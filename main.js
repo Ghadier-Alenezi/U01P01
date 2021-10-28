@@ -167,22 +167,30 @@ function renderAbout() {
 }
 
 //fav function
-
+//not perfect
 function favCar(i) {
   $(".dynamicPage").hide();
   $(".descPage").hide();
   mainArray[i].isFav = !mainArray[i].isFav;
   localStorage.setItem("mainArray", JSON.stringify(mainArray));
   render();
-  mainArray.forEach((item, i) => {
-    if (item.isFav === true) {
-      $(".favoriteP").append(`<div class="card">
-      <div class ="imgContainer"><img id= "cardImg-${i}" width= "300px" src="${item.imgCar}"/>
+}
+mainArray.forEach((item, i) => {
+  if (item.isFav === true) {
+    $(".favoriteP").append(`<div class="card">
+      <div class ="imgContainer"><img id= "cardImg-${i}" width= "300px" src="${
+      item.imgCar
+    }"/>
       </div>
       <div><h3 id= "cardName-${i}">${item.name}</h3>
-      `)
-    }
-  });
-}
+      </div>
+      <div><button onclick='renderOneItem(${i})' id= "cardBtn-${i}">see more</button></div>
+      <div><button onclick='favCar(${i})'id= "favBtn-${i}">${
+      item.isFav ? "remove from favorite" : "add to favorite"
+    }</div>
+      </div>`);
+    render();
+  }
+});
 
-//search function
+//search function not completed yet
